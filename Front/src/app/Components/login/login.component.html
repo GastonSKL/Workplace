@@ -1,0 +1,33 @@
+<form class="form form-container" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+    <div class="text-center col-sm-12 login-title-container">
+        <div><img src="../../../assets/images/work_logo.svg"></div>
+        <h4 style="font-weight: 700; font-size: 24px;">¡Bienvenido!</h4>
+    </div>
+    <div class="input-container">
+        <div class="form-group col-sm-12" style="position: relative;">
+            <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)" class="text-danger">
+                <div style="font-size: 10px;position: absolute;left: 10px;top: 37px;" *ngIf="f['username']?.errors?.['required']">Correo requerido.</div>
+                <div style="font-size: 10px;position: absolute;left: 10px;top: 37px;" *ngIf="f['username']?.errors?.['email']">Formato de correo incorrecto</div>
+            </div>
+            <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Email" formControlName="username">
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="input-group" id="show_hide_password" style="position: relative;">
+                <input class="form-control" type="password" id="pass-login" aria-describedby="passHelp" placeholder="Contraseña" formControlName="password">
+                <div class="input-group-addon">
+                    <a href="#" style="position: absolute; top: 7px; right: 10px;" (click)="togglePasswordVisibility($event)">
+                        <i class="fa" [ngClass]="{'fa-eye-slash': passwordHidden, 'fa-eye': !passwordHidden}" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)" class="text-danger">
+                    <div style="font-size: 10px;position: absolute;left: 10px;top: 40px;" *ngIf="f['password']?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres.</div>
+                    <div style="font-size: 10px;position: absolute;left: 10px;top: 50px;" *ngIf="f['password']?.errors?.['pattern']">Al menos un número, una letra mayúscula y un carácter no alfanumérico.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 buttons-login-container">
+        <button type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  >Ingresar</button>
+        <button id="create-btn" class="btn btn-outline-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;">Crear Usuario</button>
+    </div>
+</form>

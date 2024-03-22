@@ -1,0 +1,29 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form-container {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-title-container{
+    display: flex; flex-direction: column; gap: 3em;
+}
+
+.buttons-login-container{
+    display: flex; flex-direction: column; gap: .5em;
+}
+
+a, a:hover{
+    color:#333
+  }
