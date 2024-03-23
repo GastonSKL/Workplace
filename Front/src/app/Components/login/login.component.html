@@ -15,7 +15,7 @@
             <div class="input-group" id="show_hide_password" style="position: relative;">
                 <input class="form-control" type="password" id="pass-login" aria-describedby="passHelp" placeholder="Contraseña" formControlName="password">
                 <div class="input-group-addon">
-                    <a href="#" style="position: absolute; top: 7px; right: 10px;" (click)="togglePasswordVisibility($event)">
+                    <a href="#" style="position: absolute; top: 7px; right: 10px;" (click)="togglePasswordVisibility($event)" title="Mostrar contraseña">
                         <i class="fa" [ngClass]="{'fa-eye-slash': passwordHidden, 'fa-eye': !passwordHidden}" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -28,6 +28,6 @@
     </div>
     <div class="form-group col-sm-12 buttons-login-container">
         <button type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  >Ingresar</button>
-        <button id="create-btn" class="btn btn-outline-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;">Crear Usuario</button>
+        <button id="create-btn" class="btn btn-outline-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;" (click)="goToCreate()">Crear Usuario</button>
     </div>
 </form>

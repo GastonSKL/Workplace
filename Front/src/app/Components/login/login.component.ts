@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Route } from '@angular/router';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,9 @@ export class LoginComponent {
 
   formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
+
+
     this.formulario = this.formBuilder.group({
       password: ['', [
         Validators.required,
@@ -56,5 +58,9 @@ export class LoginComponent {
     this.isLogged = true;
     console.log('Formulario válido');
     alert('asdasd')
+  }
+
+  goToCreate(){
+    this.router.navigate(['createUser']);
   }
 }

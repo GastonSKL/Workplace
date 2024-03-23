@@ -6,3 +6,26 @@
     font-style: normal;
     font-variation-settings: "slnt" 0;
 }
+
+
+.form-container {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+  
+  .buttons-login-container{
+    display: flex; flex-direction: column; gap: .5em;
+}

@@ -2,15 +2,18 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
 import { FormErrors } from '../../Interface/form-errors';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginComponent],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, RouterTestingModule]
     })
       .compileComponents();
   });
@@ -19,6 +22,7 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    router = TestBed.inject(Router);
   });
 
   it('should create the component', () => {
@@ -83,4 +87,13 @@ describe('LoginComponent', () => {
     expect(component.isLogged).toBe(false);
     expect(window.alert).not.toHaveBeenCalled();
   });
+
+  it('should navigate to "createUser" route when goToCreate() is called', () => {
+    spyOn(router, 'navigate'); 
+
+    component.goToCreate();
+
+    expect(router.navigate).toHaveBeenCalledWith(['createUser']);
+  });
+
 });
