@@ -1,50 +1,51 @@
-<div style="width: 364px; height: 248px; box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.39); border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between;">
-
-    <div style="padding: .8em; display: flex; flex-direction: column; gap: .8em;">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center; gap: .5em;">
-                <i class="fa-solid fa-calendar">IC</i>
-                <div id="fecha-tarea">14/12/24 18:30 01:30 <span id="editado">(Editado)</span></div>
+<div class="task-container">
+    <div class="task-info-container">
+        <div class="task-info-container-header">
+            <div class="task-info-container-row">
+                <i class="fa-solid fa-calendar"></i>
+                <div class="text-task" id="fecha-tarea">14/12/24 18:30 01:30 <span id="editado">(Editado)</span></div>
             </div>
             <div>
-                <button><i class="fa-solid fa-arrow-right">IC</i></button>
+                <div  class="relative" style="width: 30px; height: 30px; background-color: #5230FF; cursor: pointer; color: #fff; border-radius: 4px;">
+                    <i style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="fa-solid fa-check"></i>
+                </div>
             </div>
         </div>
         
         <div>
-            <div style="display: flex; align-items: center; gap: .5em;">
-                <i class="fa-solid fa-shield-halved">IC</i>
-                <div style="display: flex; gap: .5em;">
-                    <div id="prioridad-tarea">Prioridad: </div>
-                    <div style="text-align: center; border: 1px solid #727272; border-radius: 4px; width: 16px; height: 16px; background-color: #F5F5F5;" id="prioridad-nivel">5</div>
+            <div class="task-info-container-row">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div class="task-info-container-row">
+                    <div class="text-task" id="prioridad-tarea">Prioridad: </div>
+                    <div class=" text-task task-info-container-priority" id="prioridad-nivel" style="font-size: 10px;"><div style="margin-top: -5px;">5</div></div>
                 </div>
             </div>
         </div>
         <div>
-            <div style="display: flex; align-items: center; gap: .5em;">
-                <i class="fa-solid fa-list-check">IC</i>
-                <div style="display: flex; gap: .5em;">
-                    <div id="prioridad-tarea">Prioridad: </div>
-                    <div style="text-align: center; border: 1px solid #727272; border-radius: 4px; width: 16px; height: 16px; background-color: #F5F5F5;" id="prioridad-nivel">5</div>
+            <div class="task-info-container-row">
+                <i class="fa-solid fa-list-check"></i>
+                <div class="task-info-container-row">
+                    <div id="text-task prioridad-tarea">Categoría: </div>
+                    <div class="text-task " id="categoria-nivel">Categoría 1</div>
                 </div>
             </div>
         </div>
         <div>
-            <div style="line-height: 24px; font-weight: 500; font-size: 16px;">Tarea 1</div>
+            <div class="task-info-container-task">Tarea 1</div>
         </div>
         <div style="overflow: hidden;"> 
-            <div style="font-size: 12px; font-weight: 400; line-height: 24px; letter-spacing: -0.25px;  text-overflow: ellipsis; max-height: 50px; ">
+            <div class="task-info-container-description">
                 Cuando un usuario realiza una actualización de inventario mediante la interfaz web, las cantidades no se reflejan correcasdasdasds ASD asdas das asd asd as
             </div>
         </div>
     </div>
-    <div style="background-color: #F7F7F7; display: flex; align-items: center; justify-content: space-between; padding: .5em .8em;">
-        <div>
-            <button><i class="fa-solid fa-pen">IC</i></button>
-            <button><i class="fa-solid fa-trash">IC</i></button>
+    <div class="task-footer-container">
+        <div style="display: flex; gap: 1em; align-items: center;">
+            <button title="Editar" class="task-footer-container-buttons"><i class="fa-solid fa-pen"></i></button>
+            <button title="Eliminar" class="task-footer-container-buttons"><i class="fa-solid fa-trash"></i></button>
         </div>
         <div>
-            <button><i class="fa-solid fa-arrow-right">IC</i></button>
+            <button class="task-footer-container-buttons"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
 </div>

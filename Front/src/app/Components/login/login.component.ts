@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TareaComponent } from '../tarea/tarea.component';
 
 @Component({
   selector: 'app-login',

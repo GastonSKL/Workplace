@@ -1,31 +1,46 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
 }
 
-
 .form-container {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    gap: 2em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-  }
-  
-  .buttons-login-container{
-    display: flex; flex-direction: column; gap: .5em;
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.buttons-login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.hover:hover {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.icon-positioning {
+  position: absolute;
+  top: 7px;
+  right: 10px;
 }

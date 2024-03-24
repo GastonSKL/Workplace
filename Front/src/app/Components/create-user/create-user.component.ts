@@ -66,12 +66,15 @@ export class CreateUserComponent {
     }
   }
   
-  
-
   createAccount(){
     let pass: string | null = (document.querySelector('#pass-login') as HTMLInputElement).value;
     let passConfirm: string | null = (document.querySelector('#pass-login-confirm') as HTMLInputElement).value;
 
+  }
+
+  volverLogin(){
+    this.isLogged = false;
+    this.router.navigate(['']);
   }
 
 }
