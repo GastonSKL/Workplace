@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TareaComponent } from '../tarea/tarea.component';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
 
   formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService,) {
 
 
     this.formulario = this.formBuilder.group({
@@ -62,6 +63,7 @@ export class LoginComponent {
   }
 
   login(){
+    this.authService.login();
     this.router.navigate(['home']);
   }
 

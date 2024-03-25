@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AuthService } from '../../Services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,7 +10,7 @@ export class NavbarComponent {
 
   show_modal: boolean = false;
 
-constructor(private router: Router) { }
+constructor(private router: Router, private auth: AuthService) { }
 
 
   mostrar_modal(){
@@ -22,6 +22,7 @@ constructor(private router: Router) { }
   }
 
   cerrar_sesion(){
+    this.auth.logout()
     this.router.navigate(['']);
   }
 }
