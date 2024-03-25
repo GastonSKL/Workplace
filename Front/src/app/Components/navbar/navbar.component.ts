@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalService } from '../../Services/modal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+constructor(private router: Router, private modalService: ModalService) { }
+openModal() {
+  this.modalService.openModal();
+}
 }

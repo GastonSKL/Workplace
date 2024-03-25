@@ -1,12 +1,12 @@
-<div class="task-container">
+<div class="task-container" id="{{id}}">
     <div class="task-info-container">
         <div class="task-info-container-header">
             <div class="task-info-container-row">
                 <i class="fa-solid fa-calendar"></i>
-                <div class="text-task" id="fecha-tarea">14/12/24 18:30 01:30 <span id="editado">(Editado)</span></div>
+                <div class="text-task" id="fecha-tarea">{{fecha}} <span id="editado">(Editado)</span></div>
             </div>
             <div>
-                <div  class="relative active-check" >
+                <div id="check-tarea" class="relative" [class.active-check]="check" [class.inactive-check]="!check">
                     <i style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="fa-solid fa-check"></i>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                 <i class="fa-solid fa-shield-halved"></i>
                 <div class="task-info-container-row">
                     <div class="text-task" id="prioridad-tarea">Prioridad: </div>
-                    <div class=" text-task task-info-container-priority" id="prioridad-nivel" style="font-size: 10px;"><div style="margin-top: -5px;">5</div></div>
+                    <div class=" text-task task-info-container-priority" id="prioridad-nivel" style="font-size: 10px;"><div style="margin-top: -5px;">{{prioridad}}</div></div>
                 </div>
             </div>
         </div>
@@ -26,16 +26,16 @@
                 <i class="fa-solid fa-list-check"></i>
                 <div class="task-info-container-row">
                     <div id="text-task prioridad-tarea">Categoría: </div>
-                    <div class="text-task " id="categoria-nivel">Categoría 1</div>
+                    <div class="text-task " id="categoria-nivel">Categoría {{categoria}}</div>
                 </div>
             </div>
         </div>
         <div>
-            <div class="task-info-container-task">Tarea 1</div>
+            <div class="task-info-container-task">Tarea {{id}}</div>
         </div>
         <div style="overflow: hidden;"> 
             <div class="task-info-container-description">
-                Cuando un usuario realiza una actualización de inventario mediante la interfaz web, las cantidades no se reflejan correcasdasdasds ASD asdas das asd asd as
+                {{descripcion}}
             </div>
         </div>
     </div>

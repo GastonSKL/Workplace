@@ -1,5 +1,11 @@
-<div class="tareas-container">
-    <app-tarea></app-tarea>
-    <app-tarea></app-tarea>
-    <app-tarea></app-tarea>
-</div>
+  <div class="tareas-container">
+    <app-tarea
+      *ngFor="let tarea of tareas"
+      [id]="tarea.id"
+      [prioridad]="tarea.prioridad"
+      [descripcion]="tarea.descripcion"
+      [check]="tarea.check == 1 ? true : false"
+      [categoria]="tarea.categoria"
+    ></app-tarea>
+  </div>
+

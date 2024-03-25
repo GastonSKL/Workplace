@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Tarea } from '../../Interface/tarea';
-import { HomeComponent } from './home.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+import { UserModalComponent } from './user-modal.component';
+
+describe('UserModalComponent', () => {
+  let component: UserModalComponent;
+  let fixture: ComponentFixture<UserModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomeComponent]
+      declarations: [UserModalComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(UserModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

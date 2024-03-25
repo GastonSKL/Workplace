@@ -8,11 +8,6 @@
   justify-content: space-between;
 }
 
-.task-container:hover{
-  border: 1px solid blue;
-  overflow: hidden;
-}
-
 .task-info-container {
   padding: 0.8em;
   display: flex;
@@ -52,7 +47,8 @@
   line-height: 24px;
   letter-spacing: -0.25px;
   text-overflow: ellipsis;
-  max-height: 50px;
+  max-height: 45px;
+  height: 45px;
 }
 
 .text-task{
