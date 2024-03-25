@@ -1,18 +1,86 @@
-.navbar-container{
-    padding: 1em 0em ; border-bottom: 1px solid #5230FF; width: 95%; margin-left: 2em; display: flex; align-items: center; justify-content: space-between;
+.navbar-container {
+  padding: 1em 0em;
+  border-bottom: 1px solid #5230ff;
+  width: 95%;
+  margin-left: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navbar-container-distribution{
-    display: flex; align-items: center; gap: 1em;
+.navbar-container-distribution {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
-.notifiacation{
-    width: 15px; height: 15px; background-color: red; color: white; border-radius: 50%; font-size: 10px; text-align: center; position: absolute; top: 0px; right: -5px;
+.notifiacation {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  right: -5px;
 }
-.profile{
-    border: 1px solid black; border-radius: 50%; width: 20px; height: 20px; position: relative;
+.profile {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
 }
 
-.navbar-icon-pos{
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 12px;
+.navbar-icon-pos {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+
+.modal-container {
+  border: none;
+  padding: 4px 16px 16px 16px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 208px;
+  height: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #828282;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  gap: .5em;
+}
+
+.modal-text {
+  margin-top: 2em;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  max-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.modal-button {
+  border: none;
+  font-size: 12px;
+  width: 100px;
+  width: 143px;
+  height: 32px;
+  background-color: #5230ff;
+  color: #ffff;
+  padding: 4px 24px 4px 24px;
+  border-radius: 8px;
 }

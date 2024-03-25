@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ModalService } from '../../Services/modal.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +8,20 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-constructor(private router: Router, private modalService: ModalService) { }
-openModal() {
-  this.modalService.openModal();
-}
+  show_modal: boolean = false;
+
+constructor(private router: Router) { }
+
+
+  mostrar_modal(){
+    this.show_modal = true;
+  }
+
+  cerrar_modal(){
+    this.show_modal = false;
+  }
+
+  cerrar_sesion(){
+    this.router.navigate(['']);
+  }
 }
