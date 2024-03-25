@@ -13,6 +13,7 @@ import { Tarea } from '../../Interface/tarea';
 export class HomeComponent {
 
   data: Tarea[] = [];
+  filteredData: Tarea[] = [];
 
   constructor(private router: Router)  { 
 
@@ -59,6 +60,10 @@ export class HomeComponent {
       }
     ];
 
+  }
+
+  onSearchInput(value: string) {
+    this.filteredData = this.data.filter(tarea => tarea.descripcion.toLowerCase().includes(value.toLowerCase()));
   }
 
 

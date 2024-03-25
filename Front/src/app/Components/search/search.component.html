@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="search-input-container">
-        <input id="SearchBar" title="Búsqueda" type="text" placeholder="Búsqueda" class="search-input">
+        <input id="SearchBar" title="Búsqueda" type="text" placeholder="Búsqueda" class="search-input" (input)="onSearchInput($event)">
         <i class="fa-solid fa-magnifying-glass search-input-icon-pos"></i>
     </div>
 </div>
