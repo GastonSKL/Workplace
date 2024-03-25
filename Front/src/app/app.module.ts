@@ -12,6 +12,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { SearchComponent } from './Components/search/search.component';
 import { FiltrosComponent } from './Components/filtros/filtros.component';
 import { TareasContainerComponent } from './Components/tareas-container/tareas-container.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TareasContainerComponent } from './Components/tareas-container/tareas-c
     HomeComponent,
     SearchComponent,
     FiltrosComponent,
-    TareasContainerComponent
+    TareasContainerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

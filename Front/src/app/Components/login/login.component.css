@@ -7,3 +7,15 @@
 a, a:hover{
     color:#333
   }
+
+#loginLogo{
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    #loginLogo{
+        width: 70%;
+    }
+
+    
+  }

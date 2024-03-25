@@ -1,6 +1,6 @@
 <form class="form form-container" (ngSubmit)="onSubmit()" [formGroup]="formulario">
     <div class="text-center col-sm-12 login-title-container">
-        <div><img src="../../../assets/images/work_logo.svg"></div>
+        <div><img id="loginLogo" src="../../../assets/images/work_logo.svg"></div>
         <h4 style="font-weight: 700; font-size: 24px;">¡Bienvenido!</h4>
     </div>
     <div class="input-container">
@@ -9,9 +9,9 @@
                 <div style="font-size: 10px;position: absolute;left: 10px;top: 37px;" *ngIf="f['username']?.errors?.['required']">Correo requerido.</div>
                 <div style="font-size: 10px;position: absolute;left: 10px;top: 37px;" *ngIf="f['username']?.errors?.['email']">Formato de correo incorrecto</div>
             </div>
-            <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Email" formControlName="username">
+            <input type="email" class="form-control col-sm-6" id="email-login" aria-describedby="emailHelp" placeholder="Email" formControlName="username">
         </div>
-        <div class="form-group col-sm-12">
+        <div class="form-group col-xsm-12">
             <div class="input-group" id="show_hide_password" style="position: relative;">
                 <input class="form-control" type="password" id="pass-login" aria-describedby="passHelp" placeholder="Contraseña" formControlName="password">
                 <div class="input-group-addon">
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="form-group col-sm-12 buttons-login-container">
-        <button type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  >Ingresar</button>
+        <button type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  (click)="login()">Ingresar</button>
         <button id="create-btn" class="btn btn-outline-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;" (click)="goToCreate()">Crear Usuario</button>
     </div>
 </form>

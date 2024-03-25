@@ -15,3 +15,10 @@
   left: 10px;
   top: 37px;
 }
+
+
+@media screen and (max-width: 500px) {
+  .container-title-title{
+    font-size: 16px;
+  }
+}

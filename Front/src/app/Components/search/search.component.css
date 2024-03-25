@@ -54,3 +54,12 @@
   border: 1px solid #828282;
   border-radius: 8px;
 }
+
+
+@media screen and (max-width: 500px) {
+  .search-container{
+    width: 100%;
+  }
+
+  
+}

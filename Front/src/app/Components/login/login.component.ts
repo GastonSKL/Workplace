@@ -61,6 +61,10 @@ export class LoginComponent {
     alert('asdasd')
   }
 
+  login(){
+    this.router.navigate(['home']);
+  }
+
   goToCreate(){
     this.router.navigate(['createUser']);
   }

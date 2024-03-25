@@ -44,3 +44,42 @@
   top: 7px;
   right: 10px;
 }
+
+.active-check {
+  width: 30px;
+  height: 30px;
+  background-color: #5230ff;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.inactive-check {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+
+@media screen and (max-width: 500px) {
+  #loginLogo{
+      width: 70%;
+  }
+
+  #createUserLogo{
+    width: 70%;
+  }
+
+  .form-container{
+      align-items: center;
+  }
+
+  .buttons-login-container {
+    width: 15em;
+    margin-top: 1em;
+  }
+}
