@@ -14,6 +14,7 @@ import { FiltrosComponent } from './Components/filtros/filtros.component';
 import { TareasContainerComponent } from './Components/tareas-container/tareas-container.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AddTareaComponent } from './Components/add-tarea/add-tarea.component';
+import { EditarComponent } from './Components/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddTareaComponent } from './Components/add-tarea/add-tarea.component';
     TareasContainerComponent,
     NavbarComponent,
     AddTareaComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,
