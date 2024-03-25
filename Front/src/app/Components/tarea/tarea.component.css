@@ -38,7 +38,7 @@
 
 .task-info-container-task {
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
 }
 .task-info-container-description {
@@ -67,7 +67,7 @@
   width: 14px;
   height: 14px;
   border: none;
-  background-color: none;
+  background-color: transparent;
 }
 
 .task-footer-container-buttons:hover {

@@ -1,0 +1,24 @@
+.filtros-title {
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.filtros-button-container {
+  display: flex;
+  gap: 0.8em;
+  margin-top: 0.5em;
+}
+
+.filtros-primary-button {
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  background-color: #5230ff;
+  color: #fff;
+}
+
+.filtros-secondary-button {
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  background-color: #f7f5ff;
+  color: #828282;
+}
