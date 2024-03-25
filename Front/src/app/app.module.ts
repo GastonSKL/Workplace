@@ -13,6 +13,7 @@ import { SearchComponent } from './Components/search/search.component';
 import { FiltrosComponent } from './Components/filtros/filtros.component';
 import { TareasContainerComponent } from './Components/tareas-container/tareas-container.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { AddTareaComponent } from './Components/add-tarea/add-tarea.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     FiltrosComponent,
     TareasContainerComponent,
     NavbarComponent,
+    AddTareaComponent,
   ],
   imports: [
     BrowserModule,

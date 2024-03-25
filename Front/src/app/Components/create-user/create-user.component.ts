@@ -44,6 +44,7 @@ export class CreateUserComponent {
   get f() { return this.formularioUser.controls; }
   onSubmit(){
 
+    
   }
 
   togglePasswordVisibility(event: Event, inputId: string) {

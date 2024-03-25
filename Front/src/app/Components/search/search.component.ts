@@ -40,4 +40,8 @@ export class SearchComponent {
   add_tarea(){
     this.router.navigate([''])
   }
+
+  go_to_create(){
+    this.router.navigate(['add-tarea']);
+  }
 }

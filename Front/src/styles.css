@@ -38,7 +38,21 @@
 .relative {
   position: relative;
 }
-
+.container-title {
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+}
+.container-title-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.container-error {
+  font-size: 10px;
+  position: absolute;
+  left: 10px;
+  top: 37px;
+}
 .icon-positioning {
   position: absolute;
   top: 7px;
@@ -81,5 +95,13 @@
   .buttons-login-container {
     width: 15em;
     margin-top: 1em;
+  }
+
+  .container-title-title{
+    font-size: 16px;
+  }
+  .container-title {
+    display: flex;
+    gap: 0.6em;
   }
 }
