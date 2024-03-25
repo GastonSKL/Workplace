@@ -2,7 +2,7 @@
 <div style="padding: 2em;">
 
     <app-search (searchInput)="onSearchInput($event)"></app-search>
-    <app-filtros ></app-filtros>
+    <app-filtros (filterChange)="onFilterChange($event)"></app-filtros>
     <app-tareas-container [tareas]="filteredData"></app-tareas-container>
 
 

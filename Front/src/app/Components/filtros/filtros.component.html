@@ -1,7 +1,7 @@
 <div style="margin-top: 1em;">
     <div  class="filtros-title">Filtros</div>
     <div class="filtros-button-container">
-        <button class="btn filtros-primary-button">Incompletas</button>
-        <button class="btn filtros-secondary-button">Completas</button>
+        <button id="Incompletas" class="btn filtros-secondary-button" (click)="filterCompleted(false)">Incompletas</button>
+        <button id="completas" class="btn filtros-secondary-button" (click)="filterCompleted(true)">Completas</button>
     </div>
 </div>

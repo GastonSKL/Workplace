@@ -14,7 +14,7 @@ export class HomeComponent {
 
   data: Tarea[] = [];
   filteredData: Tarea[] = [];
-
+  filtroCompletadas: boolean | null = null; 
   constructor(private router: Router)  { 
 
     this.data = [
@@ -59,13 +59,32 @@ export class HomeComponent {
         check: 0
       }
     ];
-
+    this.filteredData = [...this.data];
   }
 
   onSearchInput(value: string) {
     this.filteredData = this.data.filter(tarea => tarea.descripcion.toLowerCase().includes(value.toLowerCase()));
   }
 
-
+  onFilterChange(completed: boolean) {
+    if (completed) {
+      if (this.filtroCompletadas !== true) {
+        this.filteredData = this.data.filter(tarea => tarea.check === 1);
+        this.filtroCompletadas = true;
+      } else {
+        this.filteredData = [...this.data];
+        this.filtroCompletadas = null; 
+      }
+    } else {
+      if (this.filtroCompletadas !== false) {
+        this.filteredData = this.data.filter(tarea => tarea.check === 0);
+        this.filtroCompletadas = false;
+      } else {
+        this.filteredData = [...this.data];
+        this.filtroCompletadas = null; 
+      }
+    }
+  }
+  
   
 }
