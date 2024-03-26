@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|solutionrelative:back.models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|solutionrelative:back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.Models\\User.cs",
+              "RelativeDocumentMoniker": "Back.Models\\User.cs",
+              "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.Models\\User.cs",
+              "RelativeToolTip": "Back.Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T21:49:57.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.Models\\Task.cs",
+              "RelativeDocumentMoniker": "Back.Models\\Task.cs",
+              "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.Models\\Task.cs",
+              "RelativeToolTip": "Back.Models\\Task.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T21:49:17.581Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

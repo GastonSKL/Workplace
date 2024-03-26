@@ -1,0 +1,12 @@
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\bin\Debug\net6.0\Back.Models.deps.json
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\bin\Debug\net6.0\Back.Models.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\bin\Debug\net6.0\Back.Models.pdb
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.AssemblyInfoInputs.cache
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.AssemblyInfo.cs
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.csproj.CoreCompileInputs.cache
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.sourcelink.json
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\refint\Back.Models.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\Back.Models.pdb
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.Models\obj\Debug\net6.0\ref\Back.Models.dll

@@ -1,0 +1,12 @@
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\bin\Debug\net6.0\Back.BLL.deps.json
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\bin\Debug\net6.0\Back.BLL.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\bin\Debug\net6.0\Back.BLL.pdb
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.AssemblyInfoInputs.cache
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.AssemblyInfo.cs
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.csproj.CoreCompileInputs.cache
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.sourcelink.json
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\refint\Back.BLL.dll
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\Back.BLL.pdb
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.BLL\obj\Debug\net6.0\ref\Back.BLL.dll
