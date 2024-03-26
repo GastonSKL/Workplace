@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "96NkspIPo1ON7npLwd6Wz4UmTUWUrzFzek2B2jthKFJFmjSEtq+yYASGKSbDW9+dfUX65kRALhiIBu0gQlGK3w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.DAL\\Back.DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gasto\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\gasto\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\gasto\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
