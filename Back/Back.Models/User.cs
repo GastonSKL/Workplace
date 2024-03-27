@@ -6,7 +6,7 @@ namespace Back.Models
     public partial class User
     {
         public User()
-        {
+        { 
             Tasks = new HashSet<Task>();
         }
 
