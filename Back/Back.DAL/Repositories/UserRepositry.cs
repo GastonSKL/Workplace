@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Back.DAL.Repositories
 {
-    internal class UserRepositry : IGenericRepository<Models.User>
+    public class UserRepositry : IGenericRepository<Models.User>
     {
         private readonly WorkplaceContext _dbContext;
         public UserRepositry(WorkplaceContext dbContext)

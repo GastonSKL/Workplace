@@ -15,6 +15,6 @@ namespace Back.Models
         public DateTime? FecEdi { get; set; }
         public DateTime? FecCre { get; set; }
 
-        public virtual User IdUserNavigation { get; set; } = null!;
+        public virtual User? IdUserNavigation { get; set; } = null!;
     }
 }

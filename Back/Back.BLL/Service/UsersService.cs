@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Back.BLL.Service
 {
-    internal class UsersService : IUserService
+    public class UsersService : IUserService
     {
         private readonly IGenericRepository<Models.User> _repository;
         public UsersService(IGenericRepository<Models.User> userRepo)
@@ -34,6 +34,12 @@ namespace Back.BLL.Service
             IQueryable<Models.User> allUsers = await _repository.GetAll();
             return allUsers.Where(user => user.IdUser == id).AsQueryable();
         }
+        public async Task<IQueryable<User>> GetByEmail(string mail)
+        {
+            IQueryable<Models.User> allUsers = await _repository.GetAll();
+            return allUsers.Where(user => user.Mai == mail).AsQueryable();
+        }
+
         public async Task<bool> Insert(User model)
         {
             return await _repository.Insert(model);

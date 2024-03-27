@@ -1,4 +1,5 @@
 ﻿using Back.DAL.Repositories;
+using Back.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Back.BLL.Service
 {
-    internal class TaskService : ITaskService 
+    public class TaskService : ITaskService 
     {
 
         private readonly IGenericRepository<Models.Task> _repository;
