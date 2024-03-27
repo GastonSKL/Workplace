@@ -16,6 +16,6 @@ namespace Back.Models
         public string? Pas { get; set; }
         public string? Mai { get; set; }
 
-        public virtual ICollection<Task> Tasks { get; set; }
+        public virtual ICollection<Task>? Tasks { get; set; }
     }
 }

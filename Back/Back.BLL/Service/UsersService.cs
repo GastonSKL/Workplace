@@ -44,6 +44,12 @@ namespace Back.BLL.Service
         {
             return await _repository.Insert(model);
         }
+
+        public async Task<User?> Loggin(string mail, string pass)
+        {
+            return await _repository.Loggin(mail, pass);
+        }
+
         public async Task<bool> Update(User model)
         {
             return await _repository.Update(model);

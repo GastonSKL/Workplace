@@ -15,6 +15,7 @@ namespace Back.BLL.Service
         Task<Models.User> Get(decimal id);
         Task<IQueryable<Models.User>> GetAll();
         Task<IQueryable<Models.User>> GetAllById(decimal id);
+        Task<User?> Loggin(string mail, string pass);
         Task<bool> UserExist(string mail);
         Task<IQueryable<User>> GetByEmail(string mail);
     }

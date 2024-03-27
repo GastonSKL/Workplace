@@ -20,6 +20,17 @@ namespace Back.DAL.Repositories
         {
             try
             {
+
+                var tasks = await _dbContext.Tasks.Where(c => c.IdUser == id).ToListAsync();
+
+                if(tasks != null)
+                {
+                    foreach(var task in tasks)
+                    {
+                          _dbContext.Tasks.Remove(task);
+                        await _dbContext.SaveChangesAsync();
+                    }
+                }
                 var model = await _dbContext.Users.FirstOrDefaultAsync(c => c.IdUser == id);
 
                 if (model == null)
@@ -70,6 +81,38 @@ namespace Back.DAL.Repositories
                 return false;
             }
         }
+
+        public async Task<User?> Loggin(string mail, string pass)
+        {
+            try
+            {
+                var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Mai.ToUpper() == mail.ToUpper());
+
+                if (user == null)
+                    return null;
+
+                if (pass != user.Pas){
+                    return null;
+                }
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while logging in: {ex.Message}");
+                return null;
+            }
+        }
+
+        private bool VerifyPassword(string enteredPassword, string storedPassword)
+        {
+            // Implementa la lógica para verificar si la contraseña ingresada coincide con la almacenada
+            // Aquí podrías usar un algoritmo de hash como BCrypt o PBKDF2 para comparar las contraseñas de forma segura
+            // Por ejemplo:
+            // return SecurePasswordHasher.Verify(enteredPassword, storedPassword);
+            return enteredPassword == storedPassword;
+        }
+
         public async Task<bool> Update(User model)
         {
             try

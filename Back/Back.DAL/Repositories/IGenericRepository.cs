@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Back.DAL.Repositories
         Task<bool> Insert(TEntityModel model);
         Task<bool> Update(TEntityModel model);
         Task<bool> Delete(decimal id);
+        Task<User?> Loggin(string mail, string pass);
         Task<TEntityModel> Get(decimal id);
         Task<IQueryable<TEntityModel>> GetAll();
     }
