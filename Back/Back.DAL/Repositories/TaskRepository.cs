@@ -18,7 +18,7 @@ namespace Back.DAL.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(decimal id)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Back.DAL.Repositories
                 return false; 
             }
         }
-        public async Task<Models.Task> Get(int id)
+        public async Task<Models.Task> Get(decimal id)
         {
             try
             {
@@ -56,20 +56,6 @@ namespace Back.DAL.Repositories
         {
             IQueryable<Models.Task> qTask = _dbContext.Tasks;
             return qTask;
-        }
-        public async Task<List<Models.Task>> GetAllById(decimal id)
-        {
-            try
-            {
-                var tasks = await _dbContext.Tasks.Where(t => t.IdUser == id).ToListAsync();
-
-                return tasks;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while retrieving tasks for user with ID {id}: {ex.Message}");
-                return null; 
-            }
         }
         public async Task<bool> Insert(Models.Task model)
         {

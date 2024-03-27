@@ -16,7 +16,7 @@ namespace Back.DAL.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(decimal id)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Back.DAL.Repositories
                 return false;
             }
         }
-        public async Task<User> Get(int id)
+        public async Task<User> Get(decimal id)
         {
             try
             {
@@ -54,10 +54,6 @@ namespace Back.DAL.Repositories
         {
             IQueryable<User> qUsers = _dbContext.Users;
             return qUsers;
-        }
-        public Task<List<User>> GetAllById(decimal id)
-        {
-            throw new NotImplementedException();
         }
         public async Task<bool> Insert(User model)
         {
