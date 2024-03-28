@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { log } from 'console';
 import { UserResponse } from '../Interface/user-response';
 import { Login } from '../Interface/interface.Login';
 @Injectable({

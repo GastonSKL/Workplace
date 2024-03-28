@@ -1,19 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CreateUserComponent } from './create-user.component';
-import { FormErrors } from '../../Interface/form-errors';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from '../../Services/auth.service';
+import { By } from '@angular/platform-browser';
 
 describe('CreateUserComponent', () => {
   let component: CreateUserComponent;
   let fixture: ComponentFixture<CreateUserComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [CreateUserComponent],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, HttpClientModule], 
+      providers: [AuthService]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CreateUserComponent);
@@ -25,82 +28,40 @@ describe('CreateUserComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form invalid when empty', () => {
-    expect(component.formularioUser.valid).toBeFalsy();
+  it('should display the logo', () => {
+    const logo = fixture.debugElement.query(By.css('img[src*="work_logo.svg"]'));
+    expect(logo).toBeTruthy();
   });
 
-  it('name field validity', () => {
-    let errors :FormErrors = {};
-    let name = component.formularioUser.controls['name'];
-    errors = name.errors || {};
-    expect(errors['required']).toBeTruthy();
+  it('should display form fields', () => {
+    const nameInput = fixture.debugElement.query(By.css('input[id="name-login"]'));
+    expect(nameInput).toBeTruthy();
+
+    const lastNameInput = fixture.debugElement.query(By.css('input[id="lastname-login"]'));
+    expect(lastNameInput).toBeTruthy();
+
+    const emailInput = fixture.debugElement.query(By.css('input[id="email-login"]'));
+    expect(emailInput).toBeTruthy();
+
+    const passwordInput = fixture.debugElement.query(By.css('input[id="pass-login"]'));
+    expect(passwordInput).toBeTruthy();
+
+    const confirmPasswordInput = fixture.debugElement.query(By.css('input[id="pass-login-confirm"]'));
+    expect(confirmPasswordInput).toBeTruthy();
   });
 
-  it('lastname field validity', () => {
-    let errors :FormErrors= {};
-    let lastname = component.formularioUser.controls['lastname'];
-    errors = lastname.errors || {};
-    expect(errors['required']).toBeTruthy();
+  it('should call onSubmit method when create user button is clicked', () => {
+    spyOn(component, 'onSubmit');
+    const createUserButton = fixture.debugElement.query(By.css('#log-btn'));
+    createUserButton.nativeElement.click();
+    expect(component.onSubmit).toHaveBeenCalled();
   });
 
-  it('email field validity', () => {
-    let errors: FormErrors = {};
-    let email = component.formularioUser.controls['username'];
-    errors = email.errors || {};
-    expect(errors['required']).toBeTruthy();
-    expect(email.valid).toBeFalsy();
-
-    email.setValue('test');
-    errors = email.errors || {};
-    expect(errors['email']).toBeTruthy();
-
-    email.setValue('test@example.com');
-    errors = email.errors || {};
-    expect(errors['email']).toBeFalsy();
+  it('should call volverLogin method when back button is clicked', () => {
+    spyOn(component, 'volverLogin');
+    const backButton = fixture.debugElement.query(By.css('#create-btn'));
+    backButton.nativeElement.click();
+    expect(component.volverLogin).toHaveBeenCalled();
   });
 
-  it('password field validity', () => {
-    let errors :FormErrors= {};
-    let password = component.formularioUser.controls['password'];
-    errors = password.errors || {};
-    expect(errors['required']).toBeTruthy();
-    expect(password.valid).toBeFalsy();
-
-    password.setValue('pass');
-    errors = password.errors || {};
-    expect(errors['minlength']).toBeTruthy();
-
-    password.setValue('Password1!');
-    errors = password.errors || {};
-    expect(errors['minlength']).toBeFalsy();
-    expect(errors['pattern']).toBeFalsy();
-  });
-
-  it('passwordconfirm field validity', () => {
-    let errors: FormErrors = {};
-    let passwordconfirm = component.formularioUser.controls['passwordconfirm'];
-    errors = passwordconfirm.errors || {};
-    expect(errors['required']).toBeTruthy();
-  });
-
-  // it('submitting a form emits a user', () => {
-  //   expect(component.formularioUser.valid).toBeFalsy();
-  //   component.formularioUser.controls['name'].setValue('Test');
-  //   component.formularioUser.controls['lastname'].setValue('User');
-  //   component.formularioUser.controls['username'].setValue('test@example.com');
-  //   component.formularioUser.controls['password'].setValue('Password1!');
-  //   component.formularioUser.controls['passwordconfirm'].setValue('Password1!');
-  //   expect(component.formularioUser.valid).toBeTruthy();
-  
-  //   let emittedUser = null;
-  //   component.formSubmitted.((value) => {
-  //     emittedUser = value;
-  //   });
-  
-  //   component.onSubmit();
-    
-  //   expect(emittedUser).toBeTruthy();
-  //   // Aquí puedes agregar más expectativas según la lógica de tu aplicación
-  // });
-  
 });

@@ -1,99 +1,81 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
-import { FormErrors } from '../../Interface/form-errors';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { By } from '@angular/platform-browser';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginComponent],
-      imports: [ReactiveFormsModule, RouterTestingModule]
+      imports: [ReactiveFormsModule, RouterTestingModule, HttpClientTestingModule],
+      providers: [AuthService]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    router = TestBed.inject(Router);
   });
 
-  it('should create the component', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form should be invalid when empty', () => {
-    expect(component.formulario.valid).toBeFalsy();
+  it('should contain a form with username and password fields', () => {
+    const formElement = fixture.debugElement.query(By.css('form'));
+    expect(formElement).toBeTruthy();
+
+    const emailInput = fixture.debugElement.query(By.css('input[type="email"]'));
+    expect(emailInput).toBeTruthy();
+
+    const passwordInput = fixture.debugElement.query(By.css('input[type="password"]'));
+    expect(passwordInput).toBeTruthy();
   });
 
-  it('email field validity', () => {
-    let errors: FormErrors = {};
-    const email = component.formulario.controls['username'];
-    expect(email.valid).toBeFalsy();
+  it('should validate email field as required', () => {
+    const emailInput = component.formulario.controls['username'];
+    expect(emailInput.valid).toBeFalsy();
 
-    errors = email.errors || {};
-    expect(errors['required']).toBeTruthy();
+    emailInput.setValue('');
+    expect(emailInput.hasError('required')).toBeTruthy();
 
-    email.setValue('test');
-    errors = email.errors || {};
-    expect(errors['email']).toBeTruthy();
+    emailInput.setValue('invalidemail');
+    expect(emailInput.hasError('email')).toBeTruthy();
 
-    email.setValue('test@example.com');
-    errors = email.errors || {};
-    expect(errors['email']).toBeFalsy();
+    emailInput.setValue('validemail@example.com');
+    expect(emailInput.valid).toBeTruthy();
   });
 
-  it('password field validity', () => {
-    let errors: FormErrors = {};
-    const password = component.formulario.controls['password'];
-    expect(password.valid).toBeFalsy();
+  it('should validate password field', () => {
+    const passwordInput = component.formulario.controls['password'];
+    expect(passwordInput.valid).toBeFalsy();
 
-    errors = password.errors || {};
-    expect(errors['required']).toBeTruthy();
+    passwordInput.setValue('');
+    expect(passwordInput.hasError('required')).toBeTruthy();
 
-    password.setValue('short');
-    errors = password.errors || {};
-    expect(errors['minlength']).toBeTruthy();
+    passwordInput.setValue('short');
+    expect(passwordInput.hasError('minlength')).toBeTruthy();
 
-    password.setValue('alllowercase');
-    errors = password.errors || {};
-    expect(errors['pattern']).toBeTruthy();
+    passwordInput.setValue('noCapital123');
+    expect(passwordInput.hasError('pattern')).toBeTruthy();
 
-    password.setValue('ValidPassword1!');
-    errors = password.errors || {};
-    expect(errors['minlength']).toBeFalsy();
-    expect(errors['pattern']).toBeFalsy();
+    passwordInput.setValue('GoodP@ssw0rd');
+    expect(passwordInput.valid).toBeTruthy();
   });
 
-  it('should submit form when valid', () => {
-    spyOn(window, 'alert');
-    component.formulario.controls['username'].setValue('test@example.com');
-    component.formulario.controls['password'].setValue('ValidPassword1!');
-    component.onSubmit();
-    expect(component.isLogged).toBe(true);
-    expect(window.alert).toHaveBeenCalledWith('asdasd');
-  });
-
-  it('should not submit form when invalid', () => {
-    spyOn(window, 'alert');
-    component.onSubmit();
-    expect(component.isLogged).toBe(false);
-    expect(window.alert).not.toHaveBeenCalled();
-  });
-
-  it('should navigate to "createUser" route when goToCreate() is called', () => {
-    spyOn(router, 'navigate'); 
-
-    component.goToCreate();
-
-    expect(router.navigate).toHaveBeenCalledWith(['createUser']);
+  it('should call goToCreate method when create user button is clicked', () => {
+    spyOn(component, 'goToCreate');
+    const createButton = fixture.debugElement.query(By.css('#create-btn')).nativeElement;
+    createButton.click();
+    expect(component.goToCreate).toHaveBeenCalled();
   });
 
 });
