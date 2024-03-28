@@ -6,6 +6,7 @@ C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Back.
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Back.WebApp.runtimeconfig.json
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Back.WebApp.dll
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Back.WebApp.pdb
+C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\gasto\Desktop\Codigo\Challenge2\Back\Back.WebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll

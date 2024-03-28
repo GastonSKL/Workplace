@@ -4,7 +4,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Tarea } from '../../Interface/tarea';
 @Component({
   selector: 'app-editar',
@@ -92,8 +92,13 @@ export class EditarComponent implements OnInit{
     const des = this.el.nativeElement.querySelector('#des-edit');
     const counter = this.el.nativeElement.querySelector('#counterNumber');
 
+    let token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
     debugger;
-    this.http.get<Tarea>(`http://localhost:5238/api/Task/${idTask}`).subscribe(
+    this.http.get<Tarea>(`http://localhost:5238/api/Task/${idTask}`,{headers}).subscribe(
       (response) => {
         debugger;
         console.log(response.idTask);
@@ -144,8 +149,12 @@ export class EditarComponent implements OnInit{
       FecCre: this.FecCre
     };
 
-  
-    this.http.put(`http://localhost:5238/api/Task/`, task).subscribe(
+    let token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
+    this.http.put(`http://localhost:5238/api/Task/`, task, {headers}).subscribe(
       response => {
         console.log('Respuesta del servidor:', response);
       },

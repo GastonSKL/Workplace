@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { EditarComponent } from '../editar/editar.component';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../../Services/auth.service';
 @Component({
   selector: 'app-tarea',
@@ -30,10 +30,18 @@ export class TareaComponent {
   }
 
     eliminarTarea(id: number): void{
+
     debugger
+
+    let token = this.auth.getToken();
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
     if(confirm("Desea eliminar esta tarea?")){
       const url = `http://localhost:5238/api/Task/${id}`;
-      this.http.delete(url).subscribe(
+      this.http.delete(url,{headers}).subscribe(
         response => {
           console.log('Tarea eliminada:', response);
           this.router.navigate(['home']);
@@ -53,6 +61,12 @@ export class TareaComponent {
 
   updateTask(IdTask: number, Cat :number | null, Pri:number | null,com:number,tit:string,des:string,FecCre:string | null) {
     debugger
+
+    let token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
     let idUser = this.auth.getId()
 
     var actualDate = new Date();
@@ -78,7 +92,7 @@ export class TareaComponent {
 
     const tareaElemento = document.getElementById(`id-tarea-${IdTask}`) as HTMLElement;
   
-    this.http.put(`http://localhost:5238/api/Task/`, task).subscribe(
+    this.http.put(`http://localhost:5238/api/Task/`, task,{headers}).subscribe(
       response => {
         console.log('Respuesta del servidor:', response);
       },

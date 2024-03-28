@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|solutionrelative:back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3E3D5E3-8F22-430F-B18E-D22A775143E5}|Back.DAL\\Back.DAL.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.dal\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,12 +19,24 @@
       "RelativeMoniker": "D:0:0:{F00661CD-A490-4AA4-9A7A-CF9D84348D4C}|Back.BLL\\Back.BLL.csproj|solutionrelative:back.bll\\service\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E3D5E3-8F22-430F-B18E-D22A775143E5}|Back.DAL\\Back.DAL.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.dal\\repositories\\userrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E3D5E3-8F22-430F-B18E-D22A775143E5}|Back.DAL\\Back.DAL.csproj|solutionrelative:back.dal\\repositories\\userrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.webapp\\back.webapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2A4D1943-BB7C-4624-8966-B9DF89B47A78}|Back.WebApp\\Back.WebApp.csproj|solutionrelative:back.webapp\\back.webapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2491CA-DEDF-449E-8D98-AF530D1BC342}|Back.Models\\Back.Models.csproj|solutionrelative:back.models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E3D5E3-8F22-430F-B18E-D22A775143E5}|Back.DAL\\Back.DAL.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.dal\\repositories\\userrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E3D5E3-8F22-430F-B18E-D22A775143E5}|Back.DAL\\Back.DAL.csproj|solutionrelative:back.dal\\repositories\\userrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F00661CD-A490-4AA4-9A7A-CF9D84348D4C}|Back.BLL\\Back.BLL.csproj|c:\\users\\gasto\\desktop\\codigo\\challenge2\\back\\back.bll\\service\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,24 +62,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "Back.WebApp",
+              "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Back.WebApp.csproj",
+              "RelativeDocumentMoniker": "Back.WebApp\\Back.WebApp.csproj",
+              "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Back.WebApp.csproj",
+              "RelativeToolTip": "Back.WebApp\\Back.WebApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-28T02:39:49.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\appsettings.json",
               "RelativeDocumentMoniker": "Back.WebApp\\appsettings.json",
               "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\appsettings.json",
               "RelativeToolTip": "Back.WebApp\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-03-28T02:18:08.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.DAL\\Repositories\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Back.DAL\\Repositories\\IGenericRepository.cs",
@@ -83,37 +100,38 @@
               "RelativeToolTip": "Back.DAL\\Repositories\\IGenericRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T03:47:16.147Z"
+              "WhenOpened": "2024-03-27T03:47:16.147Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TaskController.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "Back.WebApp\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Controllers\\TaskController.cs",
               "RelativeToolTip": "Back.WebApp\\Controllers\\TaskController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwEoAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T01:26:59.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Back.WebApp\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Controllers\\UserController.cs",
               "RelativeToolTip": "Back.WebApp\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAwJUAAAAzAAAA",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAtwJUAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T02:36:18.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.BLL\\Service\\IUserService.cs",
               "RelativeDocumentMoniker": "Back.BLL\\Service\\IUserService.cs",
@@ -126,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.Models\\Task.cs",
               "RelativeDocumentMoniker": "Back.Models\\Task.cs",
@@ -139,20 +157,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "TaskRepository.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.DAL\\Repositories\\TaskRepository.cs",
               "RelativeDocumentMoniker": "Back.DAL\\Repositories\\TaskRepository.cs",
               "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.DAL\\Repositories\\TaskRepository.cs",
               "RelativeToolTip": "Back.DAL\\Repositories\\TaskRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAGUAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T02:15:37.588Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UserRepositry.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.DAL\\Repositories\\UserRepositry.cs",
               "RelativeDocumentMoniker": "Back.DAL\\Repositories\\UserRepositry.cs",
@@ -165,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TaskService.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.BLL\\Service\\TaskService.cs",
               "RelativeDocumentMoniker": "Back.BLL\\Service\\TaskService.cs",
@@ -173,11 +191,12 @@
               "RelativeToolTip": "Back.BLL\\Service\\TaskService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T02:14:18.118Z"
+              "WhenOpened": "2024-03-27T02:14:18.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UsersService.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.BLL\\Service\\UsersService.cs",
               "RelativeDocumentMoniker": "Back.BLL\\Service\\UsersService.cs",
@@ -190,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ITaskService.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.BLL\\Service\\ITaskService.cs",
               "RelativeDocumentMoniker": "Back.BLL\\Service\\ITaskService.cs",
@@ -198,17 +217,18 @@
               "RelativeToolTip": "Back.BLL\\Service\\ITaskService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T01:35:24.331Z"
+              "WhenOpened": "2024-03-27T01:35:24.331Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Program.cs",
               "RelativeDocumentMoniker": "Back.WebApp\\Program.cs",
               "ToolTip": "C:\\Users\\gasto\\Desktop\\Codigo\\Challenge2\\Back\\Back.WebApp\\Program.cs",
               "RelativeToolTip": "Back.WebApp\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACkAAAAXAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T01:09:38.731Z",
               "EditorCaption": ""

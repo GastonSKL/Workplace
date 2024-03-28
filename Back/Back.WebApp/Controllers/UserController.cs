@@ -7,9 +7,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Back.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Back.WebApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -71,6 +73,7 @@ namespace Back.WebApp.Controllers
         }
 
         [HttpPost("")]
+        [AllowAnonymous]
         public async Task<IActionResult> Insert(Back.Models.User model)
         {
             if (!String.IsNullOrEmpty(model.Mai))
@@ -83,7 +86,12 @@ namespace Back.WebApp.Controllers
 
                     if (result)
                     {
-                        return Ok("User created.");
+                        LogginModel modelLog = new LogginModel();
+                        modelLog.pass = model.Pas;
+                        modelLog.mail = model.Mai;
+
+                        string jwtToken = GenerateTokem(modelLog);
+                        return Ok(new { token = jwtToken, email = modelLog.mail });
                     }
                     else
                     {
@@ -139,6 +147,7 @@ namespace Back.WebApp.Controllers
         }
 
         [HttpPost("loggin")]
+        [AllowAnonymous]
         public async Task<IActionResult> Loggin(LogginModel model)
         {
             var tasks = await _userService.Loggin(model.mail, model.pass);
@@ -148,7 +157,7 @@ namespace Back.WebApp.Controllers
                 return NotFound();
             }
             string jwtToken = GenerateTokem(model);
-            return Ok(new { token = jwtToken});
+            return Ok(new { token = jwtToken, email = model.mail});
         }
 
         private string GenerateTokem(LogginModel user)

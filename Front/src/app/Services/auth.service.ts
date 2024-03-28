@@ -1,9 +1,10 @@
 // auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { log } from 'console';
 import { UserResponse } from '../Interface/user-response';
+import { Login } from '../Interface/interface.Login';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class AuthService {
   private isLoggedIn: boolean = false;
   private email: string = "";
   private id: number = 0;
+  private token : string = "";
   constructor(private http: HttpClient, private router: Router) { }
 
   login(mail :string, pass :string) {
@@ -20,20 +22,23 @@ export class AuthService {
       pass: pass
     };
 
-    this.http.post<UserResponse>('http://localhost:5238/api/User/loggin', userData).subscribe(
+    this.http.post<Login>('http://localhost:5238/api/User/loggin', userData).subscribe(
       (response) => {
         debugger
         this.isLoggedIn = true;
         this.email = mail;
-        this.id = response.idUser;
-        console.log(response);
-        
+        this.token = response.token;
+        this.getUserId()
         this.router.navigate(['home']);
       },
       (error) => {
         alert("Falla de logueo");
       }
     );
+  }
+
+  getToken(){
+    return this.token;
   }
 
   create(name :string,mail :string,lastname :string,pass :string){
@@ -44,11 +49,13 @@ export class AuthService {
       Mai: mail
     };
     debugger
-    this.http.post('http://localhost:5238/api/User/', userData).subscribe(
+    this.http.post<Login>('http://localhost:5238/api/User/', userData).subscribe(
       (response) => {
         debugger
-        console.log(JSON.parse(response.toString()));
         this.isLoggedIn = true;
+        this.token = response.token;
+        this.email = response.email;
+        this.getUserId();
         this.router.navigate(['home']);
       },
       (error) => {
@@ -56,6 +63,8 @@ export class AuthService {
         if(error.error.text.toString()=="User created."){
           this.email = mail;
           this.isLoggedIn = true;
+          // this.token = response.token;
+        let id = this.getUserId();
           this.router.navigate(['home']);
         }
       }
@@ -76,5 +85,22 @@ export class AuthService {
 
   getId(){
     return this.id;
+  }
+
+  getUserId(){
+  debugger
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+
+    this.http.get<UserResponse[]>(`http://localhost:5238/api/User/Getbymail/${this.email}`, { headers }).subscribe(
+      (response) => {
+        this.id = response[0].idUser;
+        
+      },
+      (error) => {
+        alert("Falla al obtener id de usuario");
+      }
+    );
   }
 }

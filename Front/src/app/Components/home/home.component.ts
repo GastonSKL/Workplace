@@ -6,7 +6,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { Tarea } from '../../Interface/tarea';
 import { AuthGuard } from '../../Guards/auth.guard';
 import { AuthService } from '../../Services/auth.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class HomeComponent {
   filteredData: Tarea[] = [];
   filtroCompletadas: boolean | null = null; 
   constructor(private router: Router, private auth: AuthService, private http: HttpClient)  { 
-
+debugger
       let id :any = auth.getId();
       this.obtenerTareas(id);
     
@@ -30,8 +30,14 @@ export class HomeComponent {
   
   obtenerTareas(id: number): Observable<Tarea[]> {
     debugger
+
+    let token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
     const url = `http://localhost:5238/api/Task/GetAll/${id}`;
-    this.http.get<Tarea[]>(url).subscribe(
+    this.http.get<Tarea[]>(url,{headers}).subscribe(
       (response) => {
         debugger
         this.data = response;

@@ -3,6 +3,9 @@ using Back.DAL.DataContext;
 using Back.DAL.Repositories;
 using Back.Models;
 using Back.BLL.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,18 @@ builder.Services.AddScoped<IGenericRepository<User>, UserRepositry>();
 
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<IUserService, UsersService>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:key"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 
 builder.Services.AddCors(options =>
 {
@@ -39,8 +54,9 @@ app.UseRouting();
 
 app.UseCors("NewPolicy");
 
-app.UseAuthorization();
+app.UseAuthentication();
 
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {

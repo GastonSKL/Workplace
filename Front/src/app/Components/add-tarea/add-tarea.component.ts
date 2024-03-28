@@ -3,7 +3,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-add-tarea',
   templateUrl: './add-tarea.component.html',
@@ -90,6 +90,11 @@ export class AddTareaComponent {
     var segundos = ('0' + fechaActual.getSeconds()).slice(-2);
     var fechaFormateada = año + '-' + mes + '-' + dia + 'T' + horas + ':' + minutos + ':' + segundos;
 
+    let token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
     const taskNew = {
     IdUser: id,
     Cat: category,
@@ -101,7 +106,7 @@ export class AddTareaComponent {
     FecCre: fechaFormateada
     };
 
-    this.http.post<Response>('http://localhost:5238/api/Task/', taskNew).subscribe(
+    this.http.post<Response>('http://localhost:5238/api/Task/', taskNew, {headers}).subscribe(
       (response) => {
         debugger
         console.log(response.statusText);
