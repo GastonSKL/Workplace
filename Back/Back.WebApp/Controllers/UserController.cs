@@ -2,6 +2,11 @@
 using Back.WebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Back.Models;
 
 namespace Back.WebApp.Controllers
 {
@@ -12,11 +17,12 @@ namespace Back.WebApp.Controllers
 
         private readonly IUserService _userService;
         private readonly ITaskService _taskService;
-
-        public UserController(IUserService userService, ITaskService taskService)
+        private IConfiguration config;
+        public UserController(IUserService userService, ITaskService taskService, IConfiguration config)
         {
             _userService = userService;
             _taskService = taskService;
+            this.config = config;
         }
         [HttpOptions]
         public IActionResult Options()
@@ -136,11 +142,34 @@ namespace Back.WebApp.Controllers
         public async Task<IActionResult> Loggin(LogginModel model)
         {
             var tasks = await _userService.Loggin(model.mail, model.pass);
+
             if (tasks == null)
             {
                 return NotFound();
             }
-            return Ok(tasks);
+            string jwtToken = GenerateTokem(model);
+            return Ok(new { token = jwtToken});
+        }
+
+        private string GenerateTokem(LogginModel user)
+        {
+            var claims = new[]
+            {
+                 new Claim(ClaimTypes.Email, user.mail),
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("JWT:Key").Value));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var securityToken = new JwtSecurityToken(
+                    claims: claims,
+                    expires: DateTime.Now.AddMinutes(90),
+                    signingCredentials: creds
+                );
+
+            string token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+
+            return token;
         }
     }
 }

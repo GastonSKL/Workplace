@@ -31,20 +31,24 @@ export class TareaComponent {
 
     eliminarTarea(id: number): void{
     debugger
-    const url = `http://localhost:5238/api/Task/${id}`;
-    this.http.delete(url).subscribe(
-      response => {
-        console.log('Tarea eliminada:', response);
-        this.router.navigate(['home']);
-        this.tareaEliminada.emit(id);
+    if(confirm("Desea eliminar esta tarea?")){
+      const url = `http://localhost:5238/api/Task/${id}`;
+      this.http.delete(url).subscribe(
+        response => {
+          console.log('Tarea eliminada:', response);
+          this.router.navigate(['home']);
+          this.tareaEliminada.emit(id);
 
-      },
-      error => {
-        debugger
-        console.error('Error al eliminar la tarea:', error);
-        this.tareaEliminada.emit(id);
-      }
-    );
+        },
+        error => {
+          debugger
+          console.error('Error al eliminar la tarea:', error);
+          this.tareaEliminada.emit(id);
+        }
+      );
+    }else{
+      return;
+    }
   }
 
   updateTask(IdTask: number, Cat :number | null, Pri:number | null,com:number,tit:string,des:string,FecCre:string | null) {
