@@ -3,7 +3,8 @@
 
     <app-search (searchInput)="onSearchInput($event)"></app-search>
     <app-filtros (filterChange)="onFilterChange($event)"></app-filtros>
-    <app-tareas-container [tareas]="filteredData"></app-tareas-container>
+    <app-tareas-container [tareas]="filteredData"  (tareaEliminada)="onTaskDeleted($event)" (tareaActualizada)="onTaskUpdated()" ></app-tareas-container>
+
 
 
 </div>

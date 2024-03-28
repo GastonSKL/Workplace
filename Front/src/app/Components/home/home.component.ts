@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { SearchComponent } from '../search/search.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Tarea } from '../../Interface/tarea';
+import { AuthGuard } from '../../Guards/auth.guard';
+import { AuthService } from '../../Services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,61 +19,48 @@ export class HomeComponent {
   data: Tarea[] = [];
   filteredData: Tarea[] = [];
   filtroCompletadas: boolean | null = null; 
-  constructor(private router: Router)  { 
+  constructor(private router: Router, private auth: AuthService, private http: HttpClient)  { 
 
-    this.data = [
-      {
-        id: 1,
-        fecha: '2024-03-25',
-        categoria: 1,
-        descripcion: 'Hacer la compra',
-        prioridad: 2,
-        check: 0
+      let id :any = auth.getId();
+      this.obtenerTareas(id);
+    
+  }
+
+
+  
+  obtenerTareas(id: number): Observable<Tarea[]> {
+    debugger
+    const url = `http://localhost:5238/api/Task/GetAll/${id}`;
+    this.http.get<Tarea[]>(url).subscribe(
+      (response) => {
+        debugger
+        this.data = response;
+        this.filteredData = [...this.data];
       },
-      {
-        id: 2,
-        fecha: '2024-03-26',
-        categoria: 2,
-        descripcion: 'Estudiar para el examen',
-        prioridad: 1,
-        check: 1
-      },
-      {
-        id: 3,
-        fecha: '2024-03-27',
-        categoria: 1,
-        descripcion: 'Ir al gimnasio',
-        prioridad: 3,
-        check: 0
-      },
-      {
-        id: 4,
-        fecha: '2024-03-28',
-        categoria: 3,
-        descripcion: 'Llamar a mamá',
-        prioridad: 2,
-        check: 1
-      },
-      {
-        id: 5,
-        fecha: '2024-03-29',
-        categoria: 2,
-        descripcion: 'Terminar el proyecto',
-        prioridad: 1,
-        check: 0
+      (error) => {
+        console.error('Error al obtener tareas:', error);
       }
-    ];
-    this.filteredData = [...this.data];
+    );
+    return new Observable<Tarea[]>();
   }
 
   onSearchInput(value: string) {
-    this.filteredData = this.data.filter(tarea => tarea.descripcion.toLowerCase().includes(value.toLowerCase()));
-  }
+    if (value !== '') {
+      this.filteredData = this.data.filter(tarea => 
+        tarea.des.toLowerCase().includes(value.toLowerCase()) ||
+        (tarea.pri !== null && tarea.pri.toString().toLowerCase().includes(value.toLowerCase())) ||
+        (tarea.cat !== null && tarea.cat.toString().toLowerCase().includes(value.toLowerCase()))
+      );
+    } else {
+      this.filteredData = [...this.data]; 
+    }
+}
+
 
   onFilterChange(completed: boolean) {
     if (completed) {
       if (this.filtroCompletadas !== true) {
-        this.filteredData = this.data.filter(tarea => tarea.check === 1);
+        this.filteredData = this.data.filter(tarea => tarea.com === 1);
         this.filtroCompletadas = true;
       } else {
         this.filteredData = [...this.data];
@@ -77,7 +68,7 @@ export class HomeComponent {
       }
     } else {
       if (this.filtroCompletadas !== false) {
-        this.filteredData = this.data.filter(tarea => tarea.check === 0);
+        this.filteredData = this.data.filter(tarea => tarea.com === 0);
         this.filtroCompletadas = false;
       } else {
         this.filteredData = [...this.data];
@@ -85,6 +76,15 @@ export class HomeComponent {
       }
     }
   }
-  
+
+  onTaskDeleted(id: number): void {
+    debugger
+    this.data = this.data.filter(tarea => tarea.idTask !== id);
+    this.filteredData = [...this.data];
+  }
+  onTaskUpdated() {
+    debugger
+    this.obtenerTareas(this.auth.getId());
+  }
   
 }

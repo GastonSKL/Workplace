@@ -5,24 +5,24 @@
             <i class="hover fa-solid fa-arrow-left"(click)="volver_home()"></i><span class="container-title-title"> Editar tarea</span>
         </div>
         <div class="form-group col-sm-12 relative" >
-            <input  type="text" class="form-control" id="titulo-add" aria-describedby="tituloHelp" placeholder="Titulo" formControlName="titulo" >
+            <input  type="text" class="form-control" id="titulo-edit" aria-describedby="tituloHelp" placeholder="Titulo" formControlName="titulo" >
             <div *ngIf="f['titulo'].invalid && (f['titulo'].dirty || f['titulo'].touched)" class="text-danger">
                 <div class="container-error" *ngIf="f['titulo']?.errors?.['required']">Campo requerido.</div>
             </div>
         </div>
         <div class="form-group col-sm-12 relative" >
-            <input type="number" class="form-control" id="prioridad-create" aria-describedby="prioridadHelp" placeholder="Prioridad" formControlName="prioridad">
+            <input type="number" class="form-control" id="prioridad-edit" aria-describedby="prioridadHelp" placeholder="Prioridad" formControlName="prioridad">
             <div *ngIf="f['prioridad'].invalid && (f['prioridad'].dirty || f['prioridad'].touched)" class="text-danger">
                 <div class="container-error" *ngIf="f['prioridad']?.errors?.['required']">Campo requerido.</div>
             </div>
             <div class="tarea-prioridad-counter">
                 <img src="../../../assets/icons/subs.svg" alt="substrar" id="restar" (click)="substraer(false)">
-                <div id="counterNumber" class="tarea-counter-number">0</div>
+                <div id="counterNumber" class="tarea-counter-number"></div>
                 <img src="../../../assets/icons/plus.svg" alt="añadir" id="sumar" (click)="substraer(true)">
             </div>
         </div>
         <div class="form-group col-sm-12 relative" >
-            <select class="form-select" formControlName="categoria">
+            <select class="form-select" formControlName="categoria" id="cat-edit">
                 <option selected>Categoría</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -33,13 +33,13 @@
             </div>
         </div>
         <div class="form-group col-sm-12 relative" >
-            <textarea class="form-control" formControlName="descripcion" id="" cols="30" rows="3"></textarea>
+            <textarea class="form-control" formControlName="descripcion" id="des-edit" cols="30" rows="3"></textarea>
             <div *ngIf="f['descripcion'].invalid && (f['descripcion'].dirty || f['descripcion'].touched)" class="text-danger">
                 <div class="container-error" *ngIf="f['descripcion']?.errors?.['required']">Campo requerido.</div>
             </div>
         </div>
     </div>
     <div class="form-group col-sm-12 buttons-login-container">
-        <button title="Crear tarea" type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  >Editar tarea</button>
+        <button title="Crear tarea" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  (click)="onSubmit()">Editar tarea</button>
     </div>
 </form>

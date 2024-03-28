@@ -29,13 +29,18 @@ export class SearchComponent {
     const value = target.value.trim(); 
 
     if (value !== '') {
-      this.filteredData = this.data.filter(tarea => tarea.descripcion.toLowerCase().includes(value.toLowerCase()));
+      this.filteredData = this.data.filter(tarea => 
+        tarea.des.toLowerCase().includes(value.toLowerCase()) ||
+        (tarea.pri !== null && tarea.pri.toString().toLowerCase().includes(value.toLowerCase())) ||
+        (tarea.cat !== null && tarea.cat.toString().toLowerCase().includes(value.toLowerCase()))
+      );
     } else {
       this.filteredData = [...this.data]; 
     }
 
     this.searchInput.emit(value);
-  }
+}
+
 
   add_tarea(){
     this.router.navigate([''])

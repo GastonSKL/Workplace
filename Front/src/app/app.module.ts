@@ -15,7 +15,7 @@ import { TareasContainerComponent } from './Components/tareas-container/tareas-c
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AddTareaComponent } from './Components/add-tarea/add-tarea.component';
 import { EditarComponent } from './Components/editar/editar.component';
-
+import { provideHttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,6 @@ import { EditarComponent } from './Components/editar/editar.component';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration(),
     LoginServiceService
   ],
   bootstrap: [AppComponent]

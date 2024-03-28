@@ -3,21 +3,25 @@
         <div class="task-info-container-header">
             <div class="task-info-container-row">
                 <i class="fa-solid fa-calendar"></i>
-                <div class="text-task" id="fecha-tarea">{{fecha}} <span id="editado">(Editado)</span></div>
+                <div class="text-task" style="font-size: .8em;" id="fecha-tarea">{{dateEdit}} <span id="editado">(Editado)</span></div>
             </div>
+            
             <div>
-                <div id="check-tarea" class="relative" [class.active-check]="check" [class.inactive-check]="!check">
-                    <i style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="fa-solid fa-check"></i>
+                <div (click)="updateTask(id, cat, pri, check == false ? 0 : 1, title, des, date)" id="check-tarea-{{id}}" class="relative" [class.active-check]="check" [class.inactive-check]="!check">
+                    <i  style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="fa-solid fa-check"></i>
                 </div>
             </div>
         </div>
-        
+        <div class="task-info-container-row">
+            <i class="fa-solid fa-calendar"></i>
+            <div class="text-task" style="font-size: .8em;" id="fecha-tarea">{{date}} <span id="editado">(Creado)</span></div>
+        </div>
         <div>
             <div class="task-info-container-row">
                 <i class="fa-solid fa-shield-halved"></i>
                 <div class="task-info-container-row">
                     <div class="text-task" id="prioridad-tarea">Prioridad: </div>
-                    <div class=" text-task task-info-container-priority" id="prioridad-nivel" style="font-size: 10px;"><div style="margin-top: -5px;">{{prioridad}}</div></div>
+                    <div class=" text-task task-info-container-priority" id="prioridad-nivel" style="font-size: 10px;"><div style="margin-top: -5px;">{{pri}}</div></div>
                 </div>
             </div>
         </div>
@@ -26,23 +30,23 @@
                 <i class="fa-solid fa-list-check"></i>
                 <div class="task-info-container-row">
                     <div id="text-task prioridad-tarea">Categoría: </div>
-                    <div class="text-task " id="categoria-nivel">Categoría {{categoria}}</div>
+                    <div class="text-task " id="categoria-nivel">Categoría {{cat}}</div>
                 </div>
             </div>
         </div>
         <div>
-            <div class="task-info-container-task">Tarea {{id}}</div>
+            <div class="task-info-container-task"> {{id}}</div>
         </div>
         <div style="overflow: hidden;"> 
             <div class="task-info-container-description">
-                {{descripcion}}
+                {{des}}
             </div>
         </div>
     </div>
     <div class="task-footer-container">
         <div style="display: flex; gap: 1em; align-items: center;">
             <button title="Editar" class="task-footer-container-buttons" (click)="irAEditar()"><i class="fa-solid fa-pen"></i></button>
-            <button title="Eliminar" class="task-footer-container-buttons"><i class="fa-solid fa-trash"></i></button>
+            <button title="Eliminar" (click)="eliminarTarea(id)" class="task-footer-container-buttons"><i class="fa-solid fa-trash"></i></button>
         </div>
         <div>
             <button class="task-footer-container-buttons"><i class="fa-solid fa-arrow-right"></i></button>

@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TareaComponent } from '../tarea/tarea.component';
 import { AuthService } from '../../Services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
 
   formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService,) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService,private http: HttpClient) {
 
 
     this.formulario = this.formBuilder.group({
@@ -34,7 +35,7 @@ export class LoginComponent {
 
   get f() { return this.formulario.controls; }
 
-
+  tasks: any[] = [];
 
   togglePasswordVisibility(event: Event) {
     event.preventDefault();
@@ -54,17 +55,26 @@ export class LoginComponent {
   onSubmit() {
     // Aquí puedes manejar la lógica para enviar el formulario
     if (this.formulario.invalid) {
+      alert('Datos invalidos');
       return;
+    }else{
+      this.login()
     }
-
-    this.isLogged = true;
-    console.log('Formulario válido');
-    alert('asdasd')
   }
 
-  login(){
-    this.authService.login();
-    this.router.navigate(['home']);
+  async login(){
+    debugger
+    let pass = document.querySelector("#pass-login") as HTMLInputElement;
+    let passVal :string = pass.value;
+    let mail = document.querySelector("#email-login") as HTMLInputElement;
+    let mailVal :string = mail.value;
+    await this.authService.login(mailVal, passVal);
+    
+    debugger
+    
+
+    // Realizar la solicitud POST
+    
   }
 
   goToCreate(){

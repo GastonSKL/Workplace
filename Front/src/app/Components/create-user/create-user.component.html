@@ -37,6 +37,7 @@
                 </div>
                 <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)" class="text-danger">
                     <div style="font-size: 10px;position: absolute;left: 10px;top: 40px;" *ngIf="f['password']?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres.</div>
+                    <div style="font-size: 10px;position: absolute;left: 10px;top: 50px;" *ngIf="f['password']?.errors?.['pattern']">Al menos un número, una letra mayúscula y un carácter no alfanumérico.</div>
                 </div>
             </div>
         </div>
@@ -48,11 +49,15 @@
                         <i class="fa" [ngClass]="{'fa-eye-slash': passwordHidden, 'fa-eye': !passwordHidden}" aria-hidden="true"></i>
                     </a>
                 </div>
+                <div *ngIf="f['passwordconfirm'].invalid && (f['passwordconfirm'].dirty || f['passwordconfirm'].touched)" class="text-danger">
+                    <div style="font-size: 10px;position: absolute;left: 10px;top: 40px;" *ngIf="f['passwordconfirm']?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres.</div>
+                    <div style="font-size: 10px;position: absolute;left: 10px;top: 50px;" *ngIf="f['passwordconfirm']?.errors?.['pattern']">Al menos un número, una letra mayúscula y un carácter no alfanumérico.</div>
+                </div>
             </div>
         </div>
     </div>
     <div class="form-group col-sm-12 buttons-login-container">
-        <button title="Crear usuario" type="submit" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  (click)="createAccount()">Crear usuario</button>
+        <button title="Crear usuario" type="button" id="log-btn" class="btn btn-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;"  (click)="onSubmit()">Crear usuario</button>
         <button title="Volver" id="create-btn" class="btn btn-outline-primary w-100 btn-lg" style="font-weight: 700; font-size: 14px;" (click)="volverLogin()">Volver</button>
     </div>
 </form>

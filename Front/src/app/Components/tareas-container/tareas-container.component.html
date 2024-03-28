@@ -1,11 +1,16 @@
   <div class="tareas-container">
     <app-tarea
       *ngFor="let tarea of tareas"
-      [id]="tarea.id"
-      [prioridad]="tarea.prioridad"
-      [descripcion]="tarea.descripcion"
-      [check]="tarea.check == 1 ? true : false"
-      [categoria]="tarea.categoria"
+      [id]="tarea.idTask"
+      [pri]="tarea.pri"
+      [des]="tarea.des"
+      [check]="tarea.com == 1 ? true : false"
+      [cat]="tarea.cat"
+      [title]="tarea.tit"
+      [date]="tarea.fecCre"
+      [dateEdit]="tarea.fecEdi"
+      (tareaEliminada)="onDeleteTask($event)"
+      (tareaActualizada)="onTaskUpdated()"
     ></app-tarea>
   </div>
 

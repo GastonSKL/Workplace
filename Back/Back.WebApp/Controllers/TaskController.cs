@@ -15,6 +15,13 @@ namespace Back.WebApp.Controllers
             _taskService = taskService;
         }
 
+        [HttpOptions]
+        public IActionResult Options()
+        {
+            Response.Headers.Add("Allow", "POST, GET, DELETE, PUT, OPTIONS");
+            return Ok();
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTask(decimal id)
         {

@@ -72,12 +72,10 @@ namespace Back.DAL.Repositories
                 return false; 
             }
         }
-
         public Task<User?> Loggin(string mail, string pass)
         {
             throw new NotImplementedException();
         }
-
         public async Task<bool> Update(Models.Task model)
         {
             try

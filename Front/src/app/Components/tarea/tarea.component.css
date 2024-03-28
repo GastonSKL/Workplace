@@ -65,6 +65,7 @@
   overflow: hidden;
   height: 200px;
   padding: 0 1em;
+  margin-top: -2em;
 }
 .task-footer-container-buttons {
   color: #5230ff;

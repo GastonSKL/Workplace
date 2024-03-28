@@ -18,6 +18,14 @@ builder.Services.AddScoped<IGenericRepository<User>, UserRepositry>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<IUserService, UsersService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("NewPolicy", app =>
+    {
+        app.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,12 +37,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseCors(builder =>
-{
-    builder.AllowAnyOrigin()
-           .AllowAnyMethod()
-           .AllowAnyHeader();
-});
+app.UseCors("NewPolicy");
 
 app.UseAuthorization();
 

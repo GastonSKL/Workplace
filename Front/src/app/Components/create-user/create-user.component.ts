@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-create-user',
@@ -11,7 +13,7 @@ export class CreateUserComponent {
 
 
   formularioUser: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private authService: AuthService,private formBuilder: FormBuilder, private router: Router, private http: HttpClient,) {
 
 
     this.formularioUser = this.formBuilder.group({
@@ -34,6 +36,8 @@ export class CreateUserComponent {
       ]],
       passwordconfirm: ['', [
         Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).*$/)
       ]]
     });
   }
@@ -43,8 +47,14 @@ export class CreateUserComponent {
 
   get f() { return this.formularioUser.controls; }
   onSubmit(){
+    debugger
 
-    
+    if (this.formularioUser.invalid) {
+      alert('Datos invalidos');
+      return;
+    }else{
+      this.createAccount();
+    }
   }
 
   togglePasswordVisibility(event: Event, inputId: string) {
@@ -68,8 +78,19 @@ export class CreateUserComponent {
   }
   
   createAccount(){
+    debugger
     let pass: string | null = (document.querySelector('#pass-login') as HTMLInputElement).value;
     let passConfirm: string | null = (document.querySelector('#pass-login-confirm') as HTMLInputElement).value;
+    let name: string | null = (document.querySelector('#name-login') as HTMLInputElement).value;
+    let lastName: string | null = (document.querySelector('#lastname-login') as HTMLInputElement).value;
+    let email: string | null = (document.querySelector('#email-login') as HTMLInputElement).value;
+
+    if(pass != passConfirm){
+      alert("Contraseñas distintas");
+      return
+    }else{
+      this.authService.create(name,email,lastName,pass);
+    }
 
   }
 

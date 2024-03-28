@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "Back.WebApp.Controllers.TaskController",
+    "Method": "Options",
+    "RelativePath": "api/Task",
+    "HttpMethod": "OPTIONS",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Back.WebApp.Controllers.TaskController",
     "Method": "Insert",
     "RelativePath": "api/Task",
     "HttpMethod": "POST",
@@ -87,6 +97,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Back.WebApp.Controllers.UserController",
+    "Method": "Options",
+    "RelativePath": "api/User",
+    "HttpMethod": "OPTIONS",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

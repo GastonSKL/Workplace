@@ -18,6 +18,12 @@ namespace Back.WebApp.Controllers
             _userService = userService;
             _taskService = taskService;
         }
+        [HttpOptions]
+        public IActionResult Options()
+        {
+            Response.Headers.Add("Allow", "POST, GET, OPTIONS");
+            return Ok();
+        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(decimal id)
